@@ -12,6 +12,10 @@
     "build": "node build/build.js"
   },
   "dependencies": {
+    "iview": "^2.8.0",
+    "less": "^2.7.3",
+    "less-loader": "^4.0.5",
+    "style-loader": "^0.19.1",
     "vue": "^2.5.2",
     "vue-router": "^3.0.1"
   },
