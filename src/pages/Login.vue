@@ -117,7 +117,7 @@
   #login{
     width: 100%;
     height: 100%;
-    background:url("../../static/login.jpg") no-repeat;
+    background:url("http://www.kunfan1996.pw/v_store_admin/login.jpg") no-repeat;
     background-size: 100%;
   }
 </style>
