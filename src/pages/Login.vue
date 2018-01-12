@@ -117,7 +117,7 @@
   #login{
     width: 100%;
     height: 100%;
-    background:url("../assets/image/login.jpg") no-repeat;
+    background:url("../../static/login.jpg") no-repeat;
     background-size: 100%;
   }
 </style>
