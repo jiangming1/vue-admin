@@ -28,33 +28,11 @@
         props:['form'],
         data(){
           return{
-            formExample:{
-              commitData:{
-                name:""
-              },
-              formData:{
-                labelWidth:80,
-                formInline:true,
-                show:[
-                  {
-                    component:"input",
-                    label:"姓名",
-                    model:"name",
-                    placeholder:"请输入姓名",
-                    type:"text"
-                  },
-                  {
-                    conponent:"login_button",
-                    text:" 登录账户"
-                  }
-                ]
-              }
-            }
+
           }
       },
         methods:{
            login(){
-             console.log("***login***")
              this.$router.push({path:"index"})
            },
           submit(){

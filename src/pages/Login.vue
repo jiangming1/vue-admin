@@ -1,6 +1,6 @@
 <template>
    <div id="login" class="flex-align flex-end">
-      <Card style="width:350px;margin-right: 100px;margin-bottom: 200px">
+      <Card style="width:350px;margin-right: 100px;margin-bottom: 150px">
         <Tabs>
           <template v-for="item in panelForm">
             <TabPane :label="item.label">
@@ -117,7 +117,7 @@
   #login{
     width: 100%;
     height: 100%;
-    background:url("http://www.kunfan1996.pw/v_store_admin/login.jpg") no-repeat;
+    background:url("http://www.kunfan1996.pw/v_store_admin/login.png") no-repeat;
     background-size: 100%;
   }
 </style>

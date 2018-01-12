@@ -1,0 +1,206 @@
+[
+  {
+    "type": "android-home",
+    "text": "商家管理",
+    "name":"store",
+    "children":[
+      {
+        "name":"store-new",
+        "text":"新驻商家",
+        "link":"/"
+      },
+      {
+        "name":"store-move",
+        "text":"搬迁商家",
+        "link":"/"
+      },
+      {
+        "name":"store-running",
+        "text":"在驻商家",
+        "link":"/"
+      },{
+        "name":"store-count",
+        "text":"商家统计",
+        "link":"/"
+      }
+    ]
+  },
+  {
+    "type": "briefcase",
+    "text": "商品管理",
+    "name":"goods",
+    "children":[
+      {
+        "name":"goods-new",
+        "text":"新上架商品",
+        "link":"/"
+      },
+      {
+        "name":"goods-selling",
+        "text":"在售商品",
+        "link":"/"
+      },
+      {
+        "name":"goods-off",
+        "text":" 下架商品",
+        "link":"/"
+      },{
+        "name":"goods-off",
+        "text":" 下架商品",
+        "link":"/"
+      },
+      {
+        "name":"goods-out",
+        "text":" 卖完商品",
+        "link":"/"
+      },
+      {
+        "name":"goods-count",
+        "text":" 商品销售统计",
+        "link":"/"
+      }
+    ]
+  },
+  {
+    "type": "person",
+    "text": "人事管理",
+    "name":"person",
+    "children":[
+      {
+        "name":"worker-new",
+        "text":"新入职员工",
+        "link":"/"
+      },
+      {
+        "name":"worker-leave",
+        "text":" 离职员工",
+        "link":"/"
+      },
+      {
+        "name":"worker-working",
+        "text":" 在职员工",
+        "link":"/"
+      }
+    ]
+  },
+  {
+    "type": "settings",
+    "text": "物业管理",
+    "name":"property",
+    "children":[
+      {
+        "name":"property-pay",
+        "text":"支出清单",
+        "link":"/"
+      },
+      {
+        "name":"property-take",
+        "text":"已收费列表",
+        "link":"/"
+      },
+      {
+        "name":"property-arrearage",
+        "text":" 欠费列表",
+        "link":"/"
+      }
+    ]
+  },
+  {
+    "type": "person-stalker",
+    "text": "会员管理",
+    "name":"vip",
+    "children":[
+      {
+        "name":"vip-valid",
+        "text":"有效会员列表",
+        "link":"/"
+      },
+      {
+        "name":"vip-invalid",
+        "text":"无效会员列表",
+        "link":"/"
+      },
+      {
+        "name":"vip-potential",
+        "text":" 潜在会员列表",
+        "link":"/"
+      }
+    ]
+  },
+  {
+    "type": "android-bicycle",
+    "text": "外卖平台管理",
+    "name":"parcel",
+    "children":[
+      {
+        "name":"parcel-list",
+        "text":"外卖商品列表",
+        "link":"/"
+      },
+      {
+        "name":"parcel-notsend",
+        "text":"下单未派送列表",
+        "link":"/"
+      },
+      {
+        "name":"parcel-sending",
+        "text":" 正在派送列表",
+        "link":"/"
+      },
+      {
+        "name":"parcel-finish",
+        "text":" 今日签收列表",
+        "link":"/"
+      },
+      {
+        "name":"parcel-erro",
+        "text":" 外卖异常列表",
+        "link":"/"
+      },
+      {
+        "name":"parcel-history",
+        "text":" 历史外卖列表",
+        "link":"/"
+      }
+    ]
+  },
+  {
+    "type": "android-list",
+    "text": "投诉建议管理",
+    "name":"advice",
+    "children":[
+      {
+        "name":"advice-list",
+        "text":"投诉建议列表",
+        "link":"/"
+      },
+      {
+        "name":"advice-handled",
+        "text":"已处理列表",
+        "link":"/"
+      },
+      {
+        "name":"advice-not_handle",
+        "text":"待已处理列表",
+        "link":"/"
+      },
+      {
+        "name":"advice-erro",
+        "text":" 无法处理列表",
+        "link":"/"
+      }
+    ]
+  },
+  {
+    "type": "gear-b",
+    "text": "关于用户",
+    "name":"user",
+    "children":[
+      {
+        "name":"user-detail",
+        "text":"用户详情",
+        "link":"/"
+      }
+    ]
+  }
+]
