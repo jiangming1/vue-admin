@@ -23,7 +23,7 @@
         <div id="navMenu">
           <nav-menu></nav-menu>
         </div>
-        <div id="content"></div>
+        <router-view style="flex: 1;background-color: #faf7fa" />
       </div>
     </div>
 </template>

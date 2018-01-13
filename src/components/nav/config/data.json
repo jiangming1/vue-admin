@@ -7,7 +7,7 @@
       {
         "name":"store-new",
         "text":"新驻商家",
-        "link":"/"
+        "link":"index/store-new"
       },
       {
         "name":"store-move",
@@ -41,10 +41,6 @@
         "link":"/"
       },
       {
-        "name":"goods-off",
-        "text":" 下架商品",
-        "link":"/"
-      },{
         "name":"goods-off",
         "text":" 下架商品",
         "link":"/"

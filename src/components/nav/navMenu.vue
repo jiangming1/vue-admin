@@ -1,10 +1,14 @@
 <template>
-  <Menu theme="dark" active-name="" :open-names="['1']" :accordion="true" id="nav_menu">
+  <Menu theme="dark"
+        :active-name="`${spreadItem}`"
+        :open-names="this.spreadGroup"
+        :accordion="true"
+        id="nav_menu">
     <template v-for="item in data">
       <submenu :name="item.name">
         <template slot="title">
-          <Icon :type="item.type" size="20"></Icon>
-          {{item.text}}
+          <Icon :type="item.type" size="20" style="position: relative;top: 2px"></Icon>
+          {{item.text}}{{spreadItem}}
         </template>
         <template v-for="child in item.children">
           <router-link :to="child.link">
@@ -24,7 +28,19 @@
     data() {
       return {
         data,
+        spreadItem:"",
+        spreadGroup:[],
       }
+    },
+    methods:{
+      spread(){
+        this.$set(this.spreadGroup,0,this.$route.meta.group.toString())
+        this.spreadItem=this.$route.meta.item.toString();
+
+      }
+    },
+    created(){
+      this.spread()
     }
   }
 </script>
