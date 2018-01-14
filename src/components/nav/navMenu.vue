@@ -8,7 +8,7 @@
       <submenu :name="item.name">
         <template slot="title">
           <Icon :type="item.type" size="20" style="position: relative;top: 2px"></Icon>
-          {{item.text}}{{spreadItem}}
+          {{item.text}}
         </template>
         <template v-for="child in item.children">
           <router-link :to="child.link">

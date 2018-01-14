@@ -1,6 +1,6 @@
 <template>
    <div id="login" class="flex-align flex-end">
-      <Card style="width:350px;margin-right: 100px;margin-bottom: 150px">
+      <Card style="width:288px;margin-right: 100px;margin-bottom: 150px">
         <Tabs>
           <template v-for="item in panelForm">
             <TabPane :label="item.label">
@@ -31,7 +31,7 @@
                   labelWidth:88,
                   show:[
                     {
-                      component:"input",
+                      component:"phone_input",
                       label:"手机号码",
                       model:"phone",
                       placeholder:"请输入手机号码",
@@ -51,13 +51,6 @@
                       text:" 登录账户"
                     }
                   ]
-                },
-                rules:{
-                  phone:[{required:true,message:"手机号不能为空",triger:"blur"}],
-                  password:[
-                    {required:true,message:"密码不能为空",triger:"blur"},
-                    {type:'string',min:6,message:"密码不得少于6位",triger:"blur"}
-                    ]
                 }
               }
             },{
@@ -92,16 +85,6 @@
                       text:" 登录账户"
                     }
                   ]
-                },
-                rules:{
-                  worker:[
-                    {required:true,message:"工号不能为空",triger:"blur"},
-                    {type:'string',min:10,message:"工号不得少于10位",triger:"blur"}
-                    ],
-                  password:[
-                    {required:true,message:"密码不能为空",triger:"blur"},
-                    {type:'string',min:6,message:"密码不得少于6位",triger:"blur"}
-                    ]
                 }
               }
             }]

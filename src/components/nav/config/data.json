@@ -6,17 +6,12 @@
     "children":[
       {
         "name":"store-new",
-        "text":"新驻商家",
+        "text":"在驻商家",
         "link":"index/store-new"
       },
       {
         "name":"store-move",
         "text":"搬迁商家",
-        "link":"/"
-      },
-      {
-        "name":"store-running",
-        "text":"在驻商家",
         "link":"/"
       },{
         "name":"store-count",
