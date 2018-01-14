@@ -31,7 +31,7 @@
                   v-if="item.component==='normal_select'">
           <Select
             v-model="form.commitData[item.model]"
-            style="width:180px"
+            style="width:150px"
             :placeholder="item.placeholder"
             clearable >
             <Option
