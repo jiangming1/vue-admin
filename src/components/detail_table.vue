@@ -1,17 +1,51 @@
 <template>
-  <div id="store_detail">
-    <detail-table :table-data="tableData"></detail-table>
+  <div id="normal_table">
+    <Card style="margin: 15px">
+      <table border="1" style="border-collapse: collapse;width: 100%">
+        <tr v-for="tr in tableData">
+          <template v-for="item in tr">
+            <template v-if="item.type==='avatar'">
+              <td colspan="2" rowspan="4" align="center">
+                <div>
+                  <img :src="item.value" alt="加载失败" style="height:120px;margin-top: 5px">
+                </div>
+              </td>
+            </template>
+
+            <template v-if="item.type==='normal'">
+              <td style="height: 35px;color: #80848f" align="center">{{item.text}}</td>
+              <td style="height: 35px;color: #495060;padding-left: 10px">{{item.value}}</td>
+            </template>
+
+            <template v-if="item.type==='word'">
+              <td style="height: 35px;color: #80848f" align="center">{{item.text}}</td>
+              <td colspan="7" style="height: 35px;color: #495060;padding-left: 10px">{{item.value}}</td>
+            </template>
+
+            <template v-if="item.type==='image'">
+              <td style="height: 35px;color: #80848f" align="center">{{item.text}}</td>
+              <td colspan="7" style="height: 35px">
+                <div class="flex-row">
+                  <template v-for="pic in item.value">
+                    <img :src="pic" alt="加载失败" style="height: 120px;margin: 10px">
+                  </template>
+                </div>
+              </td>
+            </template>
+          </template>
+        </tr>
+      </table>
+    </Card>
   </div>
 </template>
 
 <script>
-  import detailTable from '@/components/detail_table'
-
   export default {
     name: "detail_table",
+    props:['tableData'],
     data() {
       return {
-        tableData: [
+        tableData111: [
           [
             {
               type: "avatar",
@@ -136,9 +170,6 @@
           ]
         ]
       }
-    },
-    components:{
-      detailTable
     }
   }
 </script>
@@ -146,8 +177,8 @@
 <style scoped lang="less">
   #normal_table{
     font-size: 16px;
-      table{
-        border: 1px solid #e9eaec;
-      }
+    table{
+      border: 1px solid #e9eaec;
+    }
   }
 </style>
