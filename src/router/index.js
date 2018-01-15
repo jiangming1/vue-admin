@@ -2,9 +2,9 @@ import Vue from 'vue'
 import Router from 'vue-router'
 import Store from '@/pages/Store/router'
 
-const Login = () =>import('@/pages/Login')
-const Index = () =>import('@/pages/Index')
-const Erro = () =>import('@/pages/Erro')
+const Login = resolve =>import('@/pages/Login')
+const Index = resolve =>import('@/pages/Index')
+const Erro = resolve =>import('@/pages/Erro')
 
 Vue.use(Router)
 

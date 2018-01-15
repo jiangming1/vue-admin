@@ -7,12 +7,12 @@
       {
         "name":"store-new",
         "text":"在驻商家",
-        "link":"index/store-new"
+        "link":"/store-new"
       },
       {
         "name":"store-move",
         "text":"搬迁商家",
-        "link":"/"
+        "link":"store-move"
       },{
         "name":"store-count",
         "text":"商家统计",

@@ -70,48 +70,97 @@
         tableData:{
           head: [
             {
-              title: 'Name',
+              title: '商店名字',
+              key: 'store'
+            },
+            {
+              title: '店主名字',
               key: 'name'
             },
             {
-              title: 'Age',
-              key: 'age'
+              title: '法定人',
+              key: 'law'
             },
             {
-              title: 'Address',
-              key: 'address'
+              title:"工商号",
+              key:"id"
+            },
+            {
+              title:"类别",
+              key:"sort"
+            },
+            {
+              title:"操作",
+              key:"action",
+              render:(h,params) => {
+                return h('div',[
+                  h('Button',{
+                    props: {
+                      type: 'primary',
+                      size: 'small'
+                    },
+                    style: {
+                      marginRight: '5px'
+                    },
+                    on: {
+                      click: () => {
+                        console.log(params)
+                      }
+                    }
+                  },'查看详情')
+                ])
+              }
             }
           ],
           data: [
             {
-              name: 'John Brown',
-              age: 18,
-              address: 'New York No. 1 Lake Park',
-              date: '2016-10-03'
-            },
-            {
-              name: 'Jim Green',
-              age: 24,
-              address: 'London No. 1 Lake Park',
-              date: '2016-10-01'
-            },
-            {
-              name: 'Joe Black',
-              age: 30,
-              address: 'Sydney No. 1 Lake Park',
-              date: '2016-10-02'
-            },
-            {
-              name: 'Jon Snow',
-              age: 26,
-              address: 'Ottawa No. 2 Lake Park',
-              date: '2016-10-04'
-            },
-            {
-              name: 'Jon Snow',
-              age: 26,
-              address: 'Ottawa No. 2 Lake Park',
-              date: '2016-10-04'
+              store:"正新鸡排店",
+              name:"王小明",
+              law:"王大明",
+              id:"123456789ABCDEFG",
+              sort:"餐饮"
+            },{
+              store:"正新鸡排店",
+              name:"王小明",
+              law:"王大明",
+              id:"123456789ABCDEFG",
+              sort:"餐饮"
+            },{
+              store:"正新鸡排店",
+              name:"王小明",
+              law:"王大明",
+              id:"123456789ABCDEFG",
+              sort:"餐饮"
+            },{
+              store:"正新鸡排店",
+              name:"王小明",
+              law:"王大明",
+              id:"123456789ABCDEFG",
+              sort:"餐饮"
+            },{
+              store:"正新鸡排店",
+              name:"王小明",
+              law:"王大明",
+              id:"123456789ABCDEFG",
+              sort:"餐饮"
+            },{
+              store:"正新鸡排店",
+              name:"王小明",
+              law:"王大明",
+              id:"123456789ABCDEFG",
+              sort:"餐饮"
+            },{
+              store:"正新鸡排店",
+              name:"王小明",
+              law:"王大明",
+              id:"123456789ABCDEFG",
+              sort:"餐饮"
+            },{
+              store:"正新鸡排店",
+              name:"王小明",
+              law:"王大明",
+              id:"123456789ABCDEFG",
+              sort:"餐饮"
             }
           ]
         }

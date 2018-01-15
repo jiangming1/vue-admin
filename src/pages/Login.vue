@@ -28,7 +28,7 @@
                 },
                 formData:{
                   formInline:true,
-                  labelWidth:88,
+                  labelWidth:78,
                   show:[
                     {
                       component:"phone_input",
@@ -62,7 +62,7 @@
                 },
                 formData:{
                   formInline:true,
-                  labelWidth:64,
+                  labelWidth:54,
                   show:[
                     {
                       component:"input",
