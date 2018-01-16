@@ -23,7 +23,7 @@
         <div id="navMenu">
           <nav-menu></nav-menu>
         </div>
-        <router-view style="flex: 1;background-color: #faf7fa" />
+        <router-view style="flex: 1;background-color: #faf7fa;overflow: auto" />
       </div>
     </div>
 </template>

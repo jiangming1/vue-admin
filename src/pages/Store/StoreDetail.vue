@@ -15,6 +15,8 @@
           [
             {
               type: "avatar",
+              colspan:2,
+              rowspan:4,
               value: "http://www.kunfan1996.pw/v_store_admin/pic/store/people/wangxiaoming.jpg"
             },
             {
@@ -109,6 +111,7 @@
           [
             {
               type: "word",
+              colspan:7,
               text: "店主地址",
               value: "广东省AA市AA镇AAAA街道AA楼2层30号"
             }
@@ -116,6 +119,7 @@
           [
             {
               type: "word",
+              colspan:7,
               text: "门店地址",
               value: "广东省AA市AA镇AAAA街道AA楼2层30号"
             }
@@ -123,6 +127,7 @@
           [
             {
               type: "image",
+              colspan:7,
               text: "门店照片",
               value: ["http://www.kunfan1996.pw/v_store_admin/pic/store/view/store1-1.png", "http://www.kunfan1996.pw/v_store_admin/pic/store/view/store1-2.png", "http://www.kunfan1996.pw/v_store_admin/pic/store/view/store1-3.png"]
             }
@@ -130,6 +135,7 @@
           [
             {
               type: "image",
+              colspan:7,
               text: "合同照片",
               value: ["http://www.kunfan1996.pw/v_store_admin/pic/store/contrast/contrast1-1.jpg", "http://www.kunfan1996.pw/v_store_admin/pic/store/contrast/contrast1-2.jpg"]
             }

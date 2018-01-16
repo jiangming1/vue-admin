@@ -104,7 +104,8 @@
                     },
                     on: {
                       click: () => {
-                        console.log(params)
+                        console.log(params);
+                        this.$router.push({path:"store-detail"})
                       }
                     }
                   }, '查看详情')
