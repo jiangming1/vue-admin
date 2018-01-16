@@ -1,40 +1,39 @@
 <template>
   <div id="singlePic">
     <Modal
-      v-model="$store.state.singlePic"
+      v-model="showModal"
       title="查看图片"
       width="360"
-      :on-cancel="viewCancel">
+      @on-cancel="closeModal">
       <!--单图片放大-->
       <img :src="src" alt="图片放大失败" style="width: 100%">
-      {{$store.state.singlePic}}
     </Modal>
-
   </div>
 </template>
 
 <script>
-  import store from '@/vuex/store'
-
+  import closeModal from '@/mixins/closeModal'
   export default {
     name: "pic_view",
     props: ['src'],
+    mixins:[closeModal],
     data() {
       return {
+        showModal: false,
         viewDemo: {
           show: true,
           title: "查看图片",
           src: "http://www.kunfan1996.pw/v_store_admin/pic/store/people/wangxiaoming.jpg"
-        },
-        showModal:true
+        }
+      }
+    },
+    watch:{
+      show: function(newVal, oldVal){
+        this.showModal = newVal
       }
     },
     methods:{
-      viewCancel(){
-        $store.state.singlePic=false
-      }
-    },
-    store
+    }
   }
 </script>
 

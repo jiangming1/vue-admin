@@ -10,8 +10,7 @@
             <template v-if="item.type==='avatar'">
               <td :colspan="item.colspan" :rowspan="item.rowspan" align="center">
                 <div>
-                  <img :src="item.value" alt="加载失败" style="height:120px;margin-top: 5px;cursor: pointer"
-                       @click="singlePicView(item.value)">
+                  <img :src="item.value" alt="加载失败" style="height:120px;margin-top: 5px;cursor: pointer" @click="singlePicView(item.value)">
                 </div>
               </td>
             </template>
@@ -40,19 +39,16 @@
         </tr>
       </table>
     </Card>
-    <!--{{ $store.state.singlePic}}-->
-    <single-pic :show="$store.state.singlePic" :src="src"></single-pic>
+    <single-pic :show="edit" :src="src" @on-cancel="closeModal"></single-pic>
   </div>
 </template>
 
 <script>
   import singlePic from '@/components/single_pic'
-  import store from '@/vuex/store'
-
 
   export default {
     name: "detail_table",
-    props: ['tableData'],
+    props:['tableData'],
     data() {
       return {
         //deme data
@@ -180,30 +176,29 @@
             }
           ]
         ],
-        edit: false,
-        src: ""
+        edit:false,
+        src:""
       }
     },
-    methods: {
-      singlePicView(val) {
-        this.$store.state.singlePic = true,
-          this.src = val
+    methods:{
+      singlePicView(val){
+        this.edit=true,
+          this.src=val
       },
-      closeModal() {
-        this.edit = false
+      closeModal(){
+        this.edit=false
       }
     },
-    components: {
+    components:{
       singlePic
-    },
-    store
+    }
   }
 </script>
 
 <style scoped lang="less">
-  #normal_table {
+  #normal_table{
     font-size: 16px;
-    table {
+    table{
       border: 1px solid #e9eaec;
     }
   }
