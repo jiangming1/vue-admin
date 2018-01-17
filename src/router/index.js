@@ -17,6 +17,10 @@ export default new Router({
     },{
       path:'/index',
       name:"Index",
+      meta:{
+        group:"store",
+        item:"index"
+      },
       component:Index,
       children:[
         ...Store
@@ -25,6 +29,10 @@ export default new Router({
     {
       path:"*",
       name:"404",
+      meta:{
+        group:"erro",
+        item:"erro"
+      },
       component:Erro
     }
   ]

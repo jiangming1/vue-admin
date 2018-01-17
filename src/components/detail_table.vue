@@ -29,8 +29,8 @@
               <td style="height: 33px;color: #80848f" align="center">{{item.text}}</td>
               <td :colspan="item.colspan" style="height: 35px">
                 <div class="flex-row">
-                  <template v-for="pic in item.value">
-                    <img :src="pic" alt="加载失败" style="height: 110px;margin: 10px">
+                  <template v-for="(pic,index) in item.value">
+                    <img :src="pic" alt="加载失败" style="height: 110px;margin: 10px;cursor: pointer" @click="manyPicView(index,item.value)" />
                   </template>
                 </div>
               </td>
@@ -39,19 +39,21 @@
         </tr>
       </table>
     </Card>
-    <single-pic :show="edit" :src="src" @on-cancel="closeModal"></single-pic>
+    <single-pic :show="singlePicShow" :src="singlePicSrc" @on-cancel="closeSinglePicModal"></single-pic>
+    <many-pic :show="manyPicShow" :src="manyPicSrc" :item-index="manyPicSrcIndex" @on-cancel="closeManyPicModal"></many-pic>
   </div>
 </template>
 
 <script>
   import singlePic from '@/components/single_pic'
+  import manyPic from '@/components/many_pic'
 
   export default {
     name: "detail_table",
     props:['tableData'],
     data() {
       return {
-        //deme data
+        //单图片 data
         tableDataDemo: [
           [
             {
@@ -176,21 +178,35 @@
             }
           ]
         ],
-        edit:false,
-        src:""
+        singlePicShow:false,
+        singlePicSrc:"",
+      //多图片 data
+        manyPicShow:false,
+        manyPicSrc:"",
+        manyPicSrcIndex:""
       }
     },
     methods:{
       singlePicView(val){
-        this.edit=true,
-          this.src=val
+        this.singlePicShow=true,
+          this.singlePicSrc=val
       },
-      closeModal(){
-        this.edit=false
+      closeSinglePicModal(){
+        this.singlePicShow=false
+      },
+      closeManyPicModal(){
+        this.manyPicSrcIndex=""
+        this.manyPicShow=false
+      },
+      manyPicView(index,src){
+        // console.log(index,src)
+        this.manyPicShow=true
+        this.manyPicSrc=src
+        this.manyPicSrcIndex=index
       }
     },
     components:{
-      singlePic
+      singlePic,manyPic
     }
   }
 </script>

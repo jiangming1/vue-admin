@@ -3,7 +3,7 @@
     <Modal
       v-model="showModal"
       title="查看图片"
-      width="360"
+      width="460"
       @on-cancel="closeModal">
       <!--单图片放大-->
       <img :src="src" alt="图片放大失败" style="width: 100%">
@@ -28,8 +28,8 @@
       }
     },
     watch:{
-      show: function(newVal, oldVal){
-        this.showModal = newVal
+      show: function(){
+        this.showModal = this.show
       }
     },
     methods:{
