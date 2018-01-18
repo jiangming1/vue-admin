@@ -3,7 +3,7 @@
     <Modal
       v-model="showModal"
       :title="'第'+`${index+1}`+'/'+`${src.length}`+'张'"
-      width="460"
+      width="500"
       @on-cancel="closeModal">
       <!--轮播图片放大-->
       <img :src="src[index]" alt="图片放大失败" style="width: 100%">
@@ -65,26 +65,3 @@
     }
   }
 </script>
-
-<style scoped>
-</style>
-<style lang="less">
-  div.ivu-modal-body {
-    padding: 0;
-  }
-  div.ivu-modal-footer {
-    display: none;
-  }
-  .ivu-modal-header-inner {
-    font-size: 15px;
-    font-weight: normal;
-    line-height: 22px;
-  }
-  .ivu-modal-close .ivu-icon-ios-close-empty {
-    font-size: 35px;
-    top: -8px;
-  }
-  .ivu-modal-header{
-    padding: 8px 16px;
-  }
-</style>

@@ -1,4 +1,5 @@
 <template>
+  <div>
     <Form
       :model="form.commitData"
       :label-width="form.formData.labelWidth"
@@ -13,7 +14,7 @@
                  :placeholder="item.placeholder"
                  :type="item.type"
                  style="width: 150px"
-                @on-blur="emptyCheck(form.commitData[item.model])"/>
+                 @on-blur="emptyCheck(form.commitData[item.model])"/>
         </FormItem>
 
         <!--电话输入框,正则表达式校验-->
@@ -30,8 +31,9 @@
         <FormItem :label="item.label"
                   v-if="item.component==='normal_select'">
           <Select
+            :multiple="item.multiple"
             v-model="form.commitData[item.model]"
-            style="width:150px"
+            style="width:120px"
             :placeholder="item.placeholder"
             clearable >
             <Option
@@ -60,17 +62,30 @@
         <div class="flex-center" v-if="item.conponent==='login_button'" style="margin: 10px 0">
           <Button type="primary" @click="login">{{item.text}}</Button>
         </div>
+
+        <!--出弹框按钮-->
+        <FormItem v-if="item.component==='new'">
+          <Button type="primary" @click="formModalShow=true">新建</Button>
+          <form-modal :show="formModalShow" :form="item.form" @on-cancel="closeEditInfo"></form-modal>
+        </FormItem>
       </template>
     </Form>
+
+  </div>
+
 </template>
 
 <script>
+  import formModal from '@/components/form_modal'
+  import closeModal from '@/mixins/closeModal'
+
     export default {
         name: "normal_form",
         props:['form'],
+        mixins:[closeModal],
         data(){
           return{
-
+            formModalShow:false
           }
       },
         methods:{
@@ -95,8 +110,14 @@
                 duration:2
               })
             }
+          },
+          closeEditInfo(){
+             this.formModalShow=false
           }
-        }
+        },
+      components:{
+        formModal
+      }
     }
 </script>
 

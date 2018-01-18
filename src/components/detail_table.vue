@@ -2,7 +2,7 @@
   <div id="normal_table">
     <Card style="margin: 15px">
       <div style="display: flex;justify-content: flex-end;margin-right: 20px;margin-bottom: 5px">
-        <Button type="success">修改信息</Button>
+        <Button type="success" @click="editInfo()">修改信息</Button>
       </div>
       <table border="2" style="border-collapse: collapse;width: 100%">
         <tr v-for="tr in tableData">
@@ -10,7 +10,8 @@
             <template v-if="item.type==='avatar'">
               <td :colspan="item.colspan" :rowspan="item.rowspan" align="center">
                 <div>
-                  <img :src="item.value" alt="加载失败" style="height:120px;margin-top: 5px;cursor: pointer" @click="singlePicView(item.value)">
+                  <img :src="item.value" alt="加载失败" style="height:120px;margin-top: 5px;cursor: pointer"
+                       @click="singlePicView(item.value)">
                 </div>
               </td>
             </template>
@@ -30,7 +31,8 @@
               <td :colspan="item.colspan" style="height: 35px">
                 <div class="flex-row">
                   <template v-for="(pic,index) in item.value">
-                    <img :src="pic" alt="加载失败" style="height: 110px;margin: 10px;cursor: pointer" @click="manyPicView(index,item.value)" />
+                    <img :src="pic" alt="加载失败" style="height: 110px;margin: 10px;cursor: pointer"
+                         @click="manyPicView(index,item.value)"/>
                   </template>
                 </div>
               </td>
@@ -40,181 +42,68 @@
       </table>
     </Card>
     <single-pic :show="singlePicShow" :src="singlePicSrc" @on-cancel="closeSinglePicModal"></single-pic>
-    <many-pic :show="manyPicShow" :src="manyPicSrc" :item-index="manyPicSrcIndex" @on-cancel="closeManyPicModal"></many-pic>
+    <many-pic :show="manyPicShow" :src="manyPicSrc" :item-index="manyPicSrcIndex"
+              @on-cancel="closeManyPicModal"></many-pic>
+    <form-modal :show="formModalShow" :form="form" @on-cancel="closeEditInfo"></form-modal>
   </div>
 </template>
 
 <script>
   import singlePic from '@/components/single_pic'
   import manyPic from '@/components/many_pic'
+  import formModal from '@/components/form_modal'
 
   export default {
     name: "detail_table",
-    props:['tableData'],
+    props: ['tableData','form'],
     data() {
       return {
         //单图片 data
-        tableDataDemo: [
-          [
-            {
-              type: "avatar",
-              value: "http://www.kunfan1996.pw/v_store_admin/pic/store/people/wangxiaoming.jpg"
-            },
-            {
-              type: "normal",
-              text: "商店名",
-              value: "正新鸡排"
-            },
-            {
-              type: "normal",
-              text: "类别",
-              value: "餐饮"
-            },
-            {
-              type: "normal",
-              text: "状态",
-              value: "营业中"
-            }
-          ],
-          [
-            {
-              type: "normal",
-              text: "店主名",
-              value: "王小明"
-            },
-            {
-              type: "normal",
-              text: "法定人",
-              value: "王大明"
-            },
-            {
-              type: "normal",
-              text: "工商号",
-              value: "123456789ASDFG"
-            }
-          ],
-          [
-            {
-              type: "normal",
-              text: "店主身份证",
-              value: "442233199800122345"
-            },
-            {
-              type: "normal",
-              text: "店主手机",
-              value: "13455667788"
-            },
-            {
-              type: 'normal',
-              text: "备用手机",
-              value: "13455667788"
-            }
-          ],
-          [
-            {
-              type: 'normal',
-              text: "店主固号",
-              value: "0880-8867666"
-            },
-            {
-              type: "normal",
-              text: "店主QQ",
-              value: "2244366789"
-            },
-            {
-              type: "normal",
-              text: "店主邮箱",
-              value: "2244366789@qq.com"
-            }
-          ],
-          [
-            {
-              type: "normal",
-              text: "租金",
-              value: "4000/月"
-            },
-            {
-              type: "normal",
-              text: "租期",
-              value: "一年"
-            },
-            {
-              type: "normal",
-              text: "开店日期",
-              value: "2018年1月1日"
-            },
-            {
-              type: "normal",
-              text: "搬迁日期",
-              value: "无"
-            }
-          ],
-          [
-            {
-              type: "word",
-              text: "店主地址",
-              value: "广东省AA市AA镇AAAA街道AA楼2层30号"
-            }
-          ],
-          [
-            {
-              type: "word",
-              text: "门店地址",
-              value: "广东省AA市AA镇AAAA街道AA楼2层30号"
-            }
-          ],
-          [
-            {
-              type: "image",
-              text: "门店照片",
-              value: ["http://www.kunfan1996.pw/v_store_admin/pic/store/view/store1-1.png", "http://www.kunfan1996.pw/v_store_admin/pic/store/view/store1-2.png", "http://www.kunfan1996.pw/v_store_admin/pic/store/view/store1-3.png"]
-            }
-          ],
-          [
-            {
-              type: "image",
-              text: "合同照片",
-              value: ["http://www.kunfan1996.pw/v_store_admin/pic/store/contrast/contrast1-1.jpg", "http://www.kunfan1996.pw/v_store_admin/pic/store/contrast/contrast1-2.jpg"]
-            }
-          ]
-        ],
-        singlePicShow:false,
-        singlePicSrc:"",
-      //多图片 data
-        manyPicShow:false,
-        manyPicSrc:"",
-        manyPicSrcIndex:""
+        singlePicShow: false,
+        singlePicSrc: "",
+        //多图片 data
+        manyPicShow: false,
+        manyPicSrc: "",
+        manyPicSrcIndex: "",
+        //表单弹框 data
+        formModalShow:false
       }
     },
-    methods:{
-      singlePicView(val){
-        this.singlePicShow=true,
-          this.singlePicSrc=val
+    methods: {
+      singlePicView(src) {
+        this.singlePicShow = true,
+          this.singlePicSrc = src
       },
-      closeSinglePicModal(){
-        this.singlePicShow=false
+      closeSinglePicModal() {
+        this.singlePicShow = false
       },
-      closeManyPicModal(){
-        this.manyPicSrcIndex=""
-        this.manyPicShow=false
+      closeManyPicModal() {
+        this.manyPicSrcIndex = ""
+        this.manyPicShow = false
       },
-      manyPicView(index,src){
+      manyPicView(index, src) {
         // console.log(index,src)
-        this.manyPicShow=true
-        this.manyPicSrc=src
-        this.manyPicSrcIndex=index
+        this.manyPicShow = true
+        this.manyPicSrc = src
+        this.manyPicSrcIndex = index
+      },
+      editInfo() {
+        this.formModalShow=true
+      },
+      closeEditInfo(){
+        this.formModalShow=false
       }
     },
-    components:{
-      singlePic,manyPic
+    components: {
+      singlePic, manyPic,formModal
     }
   }
 </script>
 
 <style scoped lang="less">
-  #normal_table{
+  #normal_table {
     font-size: 16px;
-    table{
+    table {
       border: 1px solid #e9eaec;
     }
   }

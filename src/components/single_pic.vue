@@ -2,17 +2,18 @@
   <div id="singlePic">
     <Modal
       v-model="showModal"
-      title="查看图片"
-      width="460"
+      title=" "
+      width="500"
       @on-cancel="closeModal">
       <!--单图片放大-->
-      <img :src="src" alt="图片放大失败" style="width: 100%">
+      <img :src="src" alt="图片放大失败" style="width: 100%" @click="closeModal">
     </Modal>
   </div>
 </template>
 
 <script>
   import closeModal from '@/mixins/closeModal'
+
   export default {
     name: "pic_view",
     props: ['src'],
@@ -40,22 +41,5 @@
 <style scoped>
 </style>
 <style lang="less">
-  div.ivu-modal-body {
-    padding: 0;
-  }
-  div.ivu-modal-footer {
-    display: none;
-  }
-  .ivu-modal-header-inner {
-    font-size: 15px;
-    font-weight: normal;
-    line-height: 22px;
-  }
-  .ivu-modal-close .ivu-icon-ios-close-empty {
-    font-size: 35px;
-    top: -8px;
-  }
-  .ivu-modal-header{
-    padding: 8px 16px;
-  }
+
 </style>
