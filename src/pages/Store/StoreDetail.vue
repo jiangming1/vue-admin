@@ -160,7 +160,9 @@
             begin:"18-01-07",
             move:"19-01-07",
             zone:[19,197,1747],
-            detail:"XX街道XX区XX楼XX号"
+            detail:"XX街道XX区XX楼XX号",
+            boss_zone:[19,197,1747],
+            boss_detail:"XX街道XX区XX楼XX号"
           },
           formData: {
             formInline: false,
@@ -292,6 +294,12 @@
                 label:"商店地址",
                 model_one:"zone",
                 model_two:"detail"
+              },
+              {
+                component:"zone",
+                label:"店主地址",
+                model_one:"boss_zone",
+                model_two:"boss_detail"
               },
               {
                 label:"上传头像",
