@@ -1,6 +1,7 @@
 const StoreNew = resolve =>import('@/pages/Store/StoreNew')
 const StoreMove = resolve =>import('@/pages/Store/StoreMove')
 const StoreDetail = resolve =>import('@/pages/Store/StoreDetail')
+const StoreCount = resolve =>import('@/pages/Store/StoreCount')
 
 export default [
   {
@@ -26,5 +27,13 @@ export default [
       item:"store-detail"
     },
     component: StoreDetail
+  },
+  {
+    path:"/store-count",
+    meta:{
+      group:"store",
+      item:"store-count"
+    },
+    component: StoreCount
   }
 ]

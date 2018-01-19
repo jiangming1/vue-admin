@@ -16,7 +16,7 @@
       },{
         "name":"store-count",
         "text":"商家统计",
-        "link":"/"
+        "link":"/store-count"
       }
     ]
   },
