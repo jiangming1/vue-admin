@@ -64,11 +64,6 @@
     overflow: auto;
     background-color: #495060;
   }
-  #content{
-    height: calc(100vh-64 px);
-    flex: 1;
-    background-color: #faf7fa;
-  }
 </style>
 <style scoped lang="less">
   #index{

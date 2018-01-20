@@ -119,7 +119,7 @@
             title:{
               text:this.title,
               textStyle:{
-                fontSize:30
+                fontSize:30,
               },
               left:"center"
             },

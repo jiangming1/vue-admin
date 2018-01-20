@@ -26,29 +26,24 @@
     "name":"goods",
     "children":[
       {
-        "name":"goods-new",
-        "text":"新上架商品",
-        "link":"/"
-      },
-      {
         "name":"goods-selling",
         "text":"在售商品",
-        "link":"/"
+        "link":"/goods-selling"
       },
       {
         "name":"goods-off",
         "text":" 下架商品",
-        "link":"/"
+        "link":"/goods-off"
       },
       {
         "name":"goods-out",
         "text":" 卖完商品",
-        "link":"/"
+        "link":"/goods-out"
       },
       {
         "name":"goods-count",
         "text":" 商品销售统计",
-        "link":"/"
+        "link":"/goods-count"
       }
     ]
   },

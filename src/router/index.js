@@ -1,10 +1,8 @@
 import Vue from 'vue'
 import Router from 'vue-router'
 import Store from '@/pages/Store/router'
+import Goods from '@/pages/Goods/router'
 
-const Login = resolve =>import('@/pages/Login')
-const Index = resolve =>import('@/pages/Index')
-const Erro = resolve =>import('@/pages/Erro')
 
 Vue.use(Router)
 
@@ -13,7 +11,7 @@ export default new Router({
     {
       path: '/',
       name: 'Login',
-      component: Login
+      component: resolve =>import('@/pages/Login')
     },{
       path:'/index',
       name:"Index",
@@ -21,9 +19,9 @@ export default new Router({
         group:"store",
         item:"index"
       },
-      component:Index,
+      component:resolve =>import('@/pages/Index'),
       children:[
-        ...Store
+        ...Store,...Goods
       ]
     },
     {
@@ -33,7 +31,7 @@ export default new Router({
         group:"erro",
         item:"erro"
       },
-      component:Erro
+      component:resolve =>import('@/pages/Erro')
     }
   ]
 })
