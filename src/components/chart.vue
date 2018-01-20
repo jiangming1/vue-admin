@@ -1,7 +1,7 @@
 <template>
   <div id="line-chart">
     <Card style="margin: 15px">
-      <div id="lineChart" style="height: 300px">
+      <div :id="chart.id" style="height: 500px">
 
       </div>
     </Card>
@@ -11,15 +11,19 @@
 <script>
   export default {
     name: "store-count",
-    props:['data'],
+    props:['chart'],
     data(){
       return{
         xData: [],
         yData: [],
         title:"",
-        eg_data:{
-          type:"line",
-          title:"777",
+        type:"",
+        //模板数据
+        eg_chart:{
+          //id具有唯一性
+          id:"lineChart",
+          type:"bar",
+          title:"11111",
           data:[
             {
               text:'一月',
@@ -68,15 +72,18 @@
               text:'十二月',
               value:37
             }
-          ]
+          ],
+          arr:["一月","二月","三月","四月","五月","六月","七月","八月","九月","十月","十一月","十二月"]
         }
       }
     },
     methods: {
       drawLine(){
         // 基于准备好的dom，初始化echarts实例
-        let myChart = this.$echarts.init(document.getElementById('lineChart'))
+        let myChart = this.$echarts.init(document.getElementById(this.chart.id))
         // 绘制图表
+        //line和bar形表格
+        if(this.chart.type==='bar'||this.chart.type==='line'){
           myChart.setOption({
             title:{
               text:this.title,
@@ -84,33 +91,92 @@
                 fontSize:30
               }
             },
+            tooltip: {
+              trigger: 'axis',
+              axisPointer: {
+                type: 'cross'
+              }
+            },
             xAxis: {
-              type: 'category',
+              type: '',
               data: this.xData
             },
             yAxis: {
-              type: 'value'
+              type: 'value',
+              axisPointer: {
+                snap: true
+              }
             },
             series: [{
               data: this.yData,
-              type: this.data.type
+              type: this.type
             }]
           });
+        }
+        //pie表格
+        if(this.chart.type==='pie'){
+          myChart.setOption({
+            title:{
+              text:this.title,
+              textStyle:{
+                fontSize:30
+              },
+              left:"center"
+            },
+
+            tooltip: {
+              trigger: 'item',
+              formatter: "{a} <br/>{b}: {c} ({d}%)"
+            },
+            legend: {
+              orient: 'vertical',
+              x: 'left',
+              data:this.xData
+            },
+            series: [
+              {
+                name:'所占百分比',
+                type:'pie',
+                radius: ['50%', '70%'],
+                avoidLabelOverlap: false,
+                label: {
+                  normal: {
+                    show: false,
+                    position: 'center'
+                  },
+                  emphasis: {
+                    show: true,
+                    textStyle: {
+                      fontSize: '30',
+                      fontWeight: 'bold'
+                    }
+                  }
+                },
+                labelLine: {
+                  normal: {
+                    show: false
+                  }
+                },
+                data:this.chart.data
+              }
+            ]
+          });
+        }
       },
       init(){
-        this.title=this.data.title;
-        this.data.data.map((item)=>{
-          this.xData.push(item.text)
+
+        //转换为符合要求的数据
+        this.title=this.chart.title;
+        this.type=this.chart.type;
+        this.chart.data.map((item)=>{
+          this.xData.push(item.name)
           this.yData.push(item.value)
         })
       }
     },
     mounted(){
-      this.drawLine()
-
-    },
-    created(){
       this.init()
+      this.drawLine()
     }
   }
 </script>
