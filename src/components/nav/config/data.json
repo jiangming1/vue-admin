@@ -93,18 +93,18 @@
   },
   {
     "type": "person-stalker",
-    "text": "会员管理",
+    "text": "百货会员管理",
     "name":"vip",
     "children":[
       {
         "name":"vip-valid",
         "text":"会员列表",
-        "link":"/"
+        "link":"/vip-valid"
       },
       {
         "name":"vip-invalid",
         "text":"过期会员列表",
-        "link":"/"
+        "link":"/vip-invalid"
       }
     ]
   },

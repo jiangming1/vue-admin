@@ -8,8 +8,8 @@
       :columns="table.head"
       :data="table.data"
       style="margin-top: 15px"></Table>
-      <div style="display: flex;justify-content: flex-end;margin: 15px 0 ">
-        <Page :total="100"></Page>
+      <div style="display: flex;justify-content: flex-end;margin: 15px 0;margin-bottom: 5px ">
+        <Page :total="50" size="small" style="margin-bottom: 10px"></Page>
       </div>
   </div>
 </template>
