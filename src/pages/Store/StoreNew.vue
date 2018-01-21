@@ -281,7 +281,7 @@
                         this.$router.push({path:"store-detail"})
                       }
                     }
-                  }, '查看详情')
+                  }, '查看编辑')
                 ])
               }
             }

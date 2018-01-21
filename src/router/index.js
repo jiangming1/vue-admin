@@ -2,6 +2,8 @@ import Vue from 'vue'
 import Router from 'vue-router'
 import Store from '@/pages/Store/router'
 import Goods from '@/pages/Goods/router'
+import Worker from '@/pages/Worker/router'
+import Property from '@/pages/Property/router'
 
 
 Vue.use(Router)
@@ -21,7 +23,7 @@ export default new Router({
       },
       component:resolve =>import('@/pages/Index'),
       children:[
-        ...Store,...Goods
+        ...Store,...Goods,...Worker,...Property
       ]
     },
     {

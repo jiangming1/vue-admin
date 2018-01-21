@@ -1,9 +1,7 @@
 <template>
   <div id="line-chart">
+    <ec-chart :chart="bar_chartData"></ec-chart>
     <ec-chart :chart="line_chartData"></ec-chart>
-    <div>
-      <ec-chart :chart="bar_chartData"></ec-chart>
-    </div>
     <ec-chart :chart="pie_chartData"></ec-chart>
   </div>
 </template>
@@ -15,8 +13,8 @@
     name: "store-count",
     data() {
       return {
-        line_chartData: {
-          id:"lineChart",
+        bar_chartData: {
+          id:"store_barChart",
           type: "bar",
           title: "2017年v百货在驻商家情况表",
           data: [
@@ -70,9 +68,9 @@
             }
           ]
         },
-        bar_chartData:{
+        line_chartData:{
           //id具有唯一性
-          id:"lineCharts",
+          id:"storelineCharts",
           type: "line",
           title: "2017年v百货在驻商家情况变化表",
           data: [
@@ -156,7 +154,6 @@
         }
       }
     },
-    methods: {},
     components: {
       ecChart
     }

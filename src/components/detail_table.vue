@@ -10,8 +10,8 @@
             <template v-if="item.type==='avatar'">
               <td :colspan="item.colspan" :rowspan="item.rowspan" align="center">
                 <div>
-                  <img :src="item.value" alt="加载失败" style="height:120px;margin-top: 5px;cursor: pointer"
-                       @click="singlePicView(item.value)">
+                  <img :src="item.value" alt="加载失败" :style="{height:item.rowspan*30+'px'}"
+                       @click="singlePicView(item.value)" class="image">
                 </div>
               </td>
             </template>
@@ -105,6 +105,10 @@
     font-size: 16px;
     table {
       border: 1px solid #e9eaec;
+    }
+    .image{
+      margin-top: 5px;
+      cursor: pointer
     }
   }
 </style>

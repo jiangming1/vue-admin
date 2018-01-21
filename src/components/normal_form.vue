@@ -50,7 +50,19 @@
                       :placeholder="item.placeholder"
                       style="width: 205px"
                       v-model="form.commitData[item.model]"
+                      placement="bottom"
                       format="yy年MM月dd日"></DatePicker>
+        </FormItem>
+
+        <!--地区级联选择器-->
+        <FormItem :label="item.label" v-if="item.component==='zone'">
+          <div class="flex-row">
+            <Cascader :data="zone" v-model="form.commitData[item.model_one]" placeholder="选择地区" style="width: 200px"></Cascader>
+            <Input v-model="form.commitData[item.model_two]"
+                   placeholder="请输入详细地址"
+                   type="text"
+                   style="width: 300px"/>
+          </div>
         </FormItem>
 
         <!--提交按钮-->
@@ -77,19 +89,21 @@
 <script>
   import formModal from '@/components/form_modal'
   import closeModal from '@/mixins/closeModal'
+  import zone from '@/assets/zone.js'
 
-    export default {
+  export default {
         name: "normal_form",
         props:['form'],
         mixins:[closeModal],
         data(){
           return{
-            formModalShow:false
+            formModalShow:false,
+            zone
           }
       },
         methods:{
            login(){
-             this.$router.push({path:"index"})
+             this.$router.push({path:"index"});
            },
           submit(){
             this.$Message.success('正在提交搜索');

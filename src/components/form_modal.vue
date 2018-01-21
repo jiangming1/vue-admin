@@ -61,13 +61,11 @@
           <FormItem :label="item.label" v-if="item.component==='zone'">
             <div class="flex-col">
               <Cascader :data="zone" v-model="form.commitData[item.model_one]" placeholder="选择地区" style="width: 200px"></Cascader>
-              <!--{{form.commitData[item.model_one]}}-->
               <Input v-model="form.commitData[item.model_two]"
                      placeholder="请输入详细地址"
                      type="text"
                      style="width: 300px"/>
             </div>
-
           </FormItem>
 
 

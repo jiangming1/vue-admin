@@ -50,22 +50,22 @@
   {
     "type": "person",
     "text": "人事管理",
-    "name":"person",
+    "name":"worker",
     "children":[
       {
-        "name":"worker-new",
-        "text":"新入职员工",
-        "link":"/"
+        "name":"worker-working",
+        "text":" 在职员工",
+        "link":"/worker-working"
       },
       {
         "name":"worker-leave",
         "text":" 离职员工",
-        "link":"/"
+        "link":"/worker-leave"
       },
       {
-        "name":"worker-working",
-        "text":" 在职员工",
-        "link":"/"
+        "name":"worker-count",
+        "text":"员工统计",
+        "link":"/worker-count"
       }
     ]
   },
@@ -77,17 +77,17 @@
       {
         "name":"property-pay",
         "text":"支出清单",
-        "link":"/"
+        "link":"/property-pay"
       },
       {
         "name":"property-take",
         "text":"已收费列表",
-        "link":"/"
+        "link":"/property-take"
       },
       {
-        "name":"property-arrearage",
+        "name":"property-arrearge",
         "text":" 欠费列表",
-        "link":"/"
+        "link":"/property-arrearge"
       }
     ]
   },
@@ -98,17 +98,12 @@
     "children":[
       {
         "name":"vip-valid",
-        "text":"有效会员列表",
+        "text":"会员列表",
         "link":"/"
       },
       {
         "name":"vip-invalid",
-        "text":"无效会员列表",
-        "link":"/"
-      },
-      {
-        "name":"vip-potential",
-        "text":" 潜在会员列表",
+        "text":"过期会员列表",
         "link":"/"
       }
     ]

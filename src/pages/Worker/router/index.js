@@ -1,0 +1,33 @@
+export default [
+  {
+    path:"/worker-working",
+    meta:{
+      group:"worker",
+      item:"worker-working"
+    },
+    component:resolve=>import('@/pages/Worker/workerWorking')
+  },
+  {
+    path:"/worker-leave",
+    meta:{
+      group:"worker",
+      item:"worker-leave"
+    },
+    component:resolve=>import('@/pages/Worker/workerLeave')
+  },{
+    path:"/worker-count",
+    meta:{
+      group:"worker",
+      item:"worker-count"
+    },
+    component:resolve=>import('@/pages/Worker/workerCount')
+  },{
+    path:"/worker-detail",
+    meta:{
+      group:"worker",
+      item:"worker-detail"
+    },
+    component:resolve=>import('@/pages/Worker/workerDetail')
+  }
+
+]
