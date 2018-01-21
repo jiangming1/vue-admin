@@ -116,59 +116,32 @@
       {
         "name":"parcel-list",
         "text":"外卖商品列表",
-        "link":"/"
+        "link":"/parcel-list"
       },
       {
         "name":"parcel-notsend",
         "text":"下单未派送列表",
-        "link":"/"
+        "link":"/parcel-notsend"
       },
       {
         "name":"parcel-sending",
         "text":" 正在派送列表",
-        "link":"/"
+        "link":"/parcel-sending"
       },
       {
         "name":"parcel-finish",
         "text":" 今日签收列表",
-        "link":"/"
+        "link":"/parcel-finish"
       },
       {
         "name":"parcel-erro",
         "text":" 外卖异常列表",
-        "link":"/"
+        "link":"/parcel-erro"
       },
       {
         "name":"parcel-history",
         "text":" 历史外卖列表",
-        "link":"/"
-      }
-    ]
-  },
-  {
-    "type": "android-list",
-    "text": "投诉建议管理",
-    "name":"advice",
-    "children":[
-      {
-        "name":"advice-list",
-        "text":"投诉建议列表",
-        "link":"/"
-      },
-      {
-        "name":"advice-handled",
-        "text":"已处理列表",
-        "link":"/"
-      },
-      {
-        "name":"advice-not_handle",
-        "text":"待已处理列表",
-        "link":"/"
-      },
-      {
-        "name":"advice-erro",
-        "text":" 无法处理列表",
-        "link":"/"
+        "link":"/parcel-history"
       }
     ]
   },

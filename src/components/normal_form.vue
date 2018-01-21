@@ -27,6 +27,12 @@
                  @on-blur="phoneCheck(form.commitData[item.model])"/>
         </FormItem>
 
+        <!--数字输入-->
+        <FormItem :label="item.label"
+                  v-if="item.component==='number_input'">
+          <InputNumber :max="100" :min="0" v-model="form.commitData[item.model]"></InputNumber>
+        </FormItem>
+
         <!--普通下拉选择,不考虑多选->界面不友好-->
         <FormItem :label="item.label"
                   v-if="item.component==='normal_select'">

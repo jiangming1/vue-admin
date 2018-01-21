@@ -53,46 +53,6 @@
               },
               {
                 component: "submit"
-              },
-              {
-                component: "new",
-                form: {
-                  commitData: {
-                    name: "",
-                    phone: "",
-                    card: ""
-                  },
-                  formData: {
-                    formInline: false,
-                    labelWidth: 80,
-                    show: [
-                      {
-                        component: "input",
-                        label: "会员名字",
-                        model: "name",
-                        placeholder: "请输入会员名字",
-                        type: "text",
-                      },
-                      {
-                        component: "input",
-                        label: "手机号码",
-                        model: "phone",
-                        placeholder: "请输入手机号码",
-                        type: "text",
-                      },
-                      {
-                        component: "input",
-                        label: "会员卡号",
-                        model: "card",
-                        placeholder: "请输入会员卡号",
-                        type: "text",
-                      },
-                      {
-                        component: "edit"
-                      }
-                    ]
-                  }
-                }
               }
             ]
           }
