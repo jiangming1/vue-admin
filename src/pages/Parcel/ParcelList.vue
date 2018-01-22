@@ -67,8 +67,9 @@
                 form: {
                   commitData: {
                     sort:"",
-                    money:"",
-                    date:[]
+                    name:'',
+                    id:"",
+                    rest:null
                   },
                   formData: {
                     formInline: false,
