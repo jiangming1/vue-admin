@@ -1,5 +1,5 @@
 # vue-admin
-##  [在线访问地址](http://www.kunfan1996.pw/v-store/#/)
+##  [我的服务器在线访问地址(很便宜,不到10块去阿里云买的,,,,)](http://www.kunfan1996.pw/v-store/#/)或者[githubPages的服务](https://kunfan96.github.io/#/)
 
 > 基于vue vue-router iview做的小系统,没加后台
 
